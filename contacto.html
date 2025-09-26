@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Grano Dorado - Estamos aquí para ayudarte con cualquier consulta sobre nuestros cafés premium de Costa Rica.">
+    <meta name="keywords" content="contacto, grano dorado, café, consultas, servicio al cliente, Costa Rica">
+    <title>Contacto - Grano Dorado</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>Grano Dorado</h2>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="historia.html" class="nav-link">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ubicacion.html" class="nav-link">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link active">Contacto</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title fade-in">Contacto</h1>
+            <p class="page-subtitle fade-in">Estamos aquí para ayudarte</p>
+            <div class="breadcrumb fade-in">
+                <a href="index.html">Inicio</a> 
+                <span class="separator">></span> 
+                <span>Contacto</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content reveal">
+                <h2>¿Tienes preguntas sobre nuestro café?</h2>
+                <p class="contact-lead">Nos encantaría escucharte. Ya sea una consulta sobre nuestros productos, una sugerencia, o si necesitas ayuda para elegir el café perfecto, estamos aquí para ti.</p>
+                <div class="contact-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Respuesta en menos de 24 horas</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Atención personalizada</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-coffee"></i>
+                        <span>Asesoría experta en café</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <h2 class="section-title">Múltiples Formas de Contactarnos</h2>
+            <div class="methods-grid">
+                <div class="method-card reveal">
+                    <div class="method-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>La forma más rápida de contactarnos. Respuesta inmediata durante horario comercial.</p>
+                    <a href="https://wa.me/50622223333" class="method-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chatear Ahora
+                    </a>
+                    <span class="method-detail">+506 2222-3333</span>
+                </div>
+                
+                <div class="method-card reveal">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Para consultas detalladas o solicitudes especiales. Te respondemos dentro de 24 horas.</p>
+                    <a href="mailto:hola@granodorado.com" class="method-btn">
+                        <i class="fas fa-envelope"></i>
+                        Enviar Email
+                    </a>
+                    <span class="method-detail">hola@granodorado.com</span>
+                </div>
+                
+                <div class="method-card reveal">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>Llámanos durante nuestro horario comercial para una atención directa y personalizada.</p>
+                    <a href="tel:+50622223333" class="method-btn">
+                        <i class="fas fa-phone"></i>
+                        Llamar Ahora
+                    </a>
+                    <span class="method-detail">+506 2222-3333</span>
+                </div>
+                
+                <div class="method-card reveal">
+                    <div class="method-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visítanos</h3>
+                    <p>Ven a conocer nuestras instalaciones y degusta nuestros cafés en persona.</p>
+                    <a href="#" class="method-btn" id="showMapBtn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ver Ubicación
+                    </a>
+                    <span class="method-detail">Av. Central, San José</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form reveal">
+                    <h3>Envíanos un Mensaje</h3>
+                    <p class="form-description">Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                    
+                    <form id="contact-form" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                                <label for="nombre">Nombre *</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                <label for="email">Email *</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
+                                <label for="telefono">Teléfono</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="asunto" name="asunto" required>
+                                    <option value="">Selecciona un tema</option>
+                                    <option value="consulta-producto">Consulta sobre productos</option>
+                                    <option value="pedido-especial">Pedido especial</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                    <option value="colaboracion">Colaboración comercial</option>
+                                    <option value="sugerencia">Sugerencias</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <label for="asunto">Tema de consulta *</label>
+                                <div class="form-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte..." required rows="5"></textarea>
+                            <label for="mensaje">Mensaje *</label>
+                            <div class="form-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">
+                                <span class="checkbox-custom"></span>
+                                Me gustaría recibir noticias y ofertas especiales por email
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar mensaje
+                            </span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Enviando...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info reveal">
+                    <h3>Información de Contacto</h3>
+                    <p class="info-description">También puedes contactarnos directamente a través de cualquiera de estos medios.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Nuestra Dirección</h4>
+                            <p>Avenida Central<br>San José, Costa Rica 10101<br>Frente al Teatro Nacional</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p>+506 2222-3333<br>+506 8888-9999 (Móvil)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>hola@granodorado.com<br>ventas@granodorado.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horarios de Atención</h4>
+                            <p>
+                                <strong>Lun - Vie:</strong> 8:00 AM - 6:00 PM<br>
+                                <strong>Sábado:</strong> 9:00 AM - 5:00 PM<br>
+                                <strong>Domingo:</strong> 10:00 AM - 3:00 PM
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Síguenos</h4>
+                            <div class="social-contact">
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                                <a href="#" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    Twitter
+                                </a>
+                                <a href="#" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                    YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="mapSection">
+        <div class="container">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <div class="map-container reveal">
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Visítanos en San José</h3>
+                        <p>Av. Central, frente al Teatro Nacional<br>San José, Costa Rica</p>
+                        <div class="map-actions">
+                            <a href="https://maps.google.com/?q=Teatro+Nacional+Costa+Rica" 
+                               target="_blank" 
+                               class="map-btn">
+                                <i class="fas fa-directions"></i>
+                                Cómo llegar
+                            </a>
+                            <a href="https://www.google.com/maps" 
+                               target="_blank" 
+                               class="map-btn secondary">
+                                <i class="fas fa-map"></i>
+                                Ver en Google Maps
+                            </a>
+                        </div>
+                        <small>Haz clic aquí para abrir Google Maps en una nueva ventana</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="location-features">
+                <div class="feature-item reveal">
+                    <i class="fas fa-parking"></i>
+                    <span>Estacionamiento disponible</span>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-wheelchair"></i>
+                    <span>Acceso para personas con discapacidad</span>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-bus"></i>
+                    <span>Transporte público cercano</span>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-coffee"></i>
+                    <span>Degustación gratuita</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="1">
+                        <span>¿Cuál es el tiempo de entrega?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Realizamos entregas en el área metropolitana de San José en 24-48 horas. Para el resto del país, el tiempo de entrega es de 2-5 días hábiles. Los pedidos internacionales tardan entre 7-14 días hábiles.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="2">
+                        <span>¿Ofrecen envío gratuito?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <p>Sí, ofrecemos envío gratuito para pedidos superiores a ₡15,000 dentro de Costa Rica. Para pedidos menores, el costo de envío es de ₡2,500. Los suscriptores premium siempre tienen envío gratuito.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="3">
+                        <span>¿Cómo conservar mejor el café?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Recomendamos almacenar el café en un lugar fresco, seco y oscuro, preferiblemente en su empaque original o en un recipiente hermético. Evita el refrigerador y consúmelo dentro de 2-3 semanas después de la fecha de tostado para obtener el mejor sabor.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="4">
+                        <span>¿Hacen pedidos personalizados?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <p>¡Absolutamente! Ofrecemos tostados personalizados, mezclas especiales para eventos, regalos corporativos y suscripciones adaptadas a tus preferencias. Contáctanos para discutir tus necesidades específicas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="5">
+                        <span>¿Cuál es su política de devoluciones?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Garantizamos la satisfacción total. Si no estás completamente satisfecho con tu compra, puedes devolverla dentro de 30 días para un reembolso completo o cambio. El producto debe estar en su empaque original y sin abrir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question" data-faq="6">
+                        <span>¿Ofrecen capacitaciones sobre café?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-6">
+                        <p>Sí, ofrecemos talleres de barista, catas dirigidas, y cursos sobre métodos de preparación. Estos pueden ser en nuestras instalaciones o en tu ubicación. Contáctanos para más información sobre fechas y precios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>¿Listo para Probar Nuestro Café?</h2>
+                <p>No esperes más para disfrutar de la mejor experiencia cafetera de Costa Rica</p>
+                <div class="cta-buttons">
+                    <a href="carta.html" class="cta-button">Ver Nuestra Carta</a>
+                    <a href="https://wa.me/50622223333" class="cta-button secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Grano Dorado</h3>
+                    <p>Conectando el mundo con el mejor café de Costa Rica desde 2022.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="carta.html">Carta</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul class="footer-links">
+                        <li><a href="carta.html#grano">Café en Grano</a></li>
+                        <li><a href="carta.html#molido">Café Molido</a></li>
+                        <li><a href="carta.html#organico">Café Orgánico</a></li>
+                        <li><a href="carta.html">Ediciones Limitadas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Políticas</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Envíos y Entregas</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grano Dorado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50612345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20cafés%20de%20Grano%20Dorado" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Contáctanos!</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

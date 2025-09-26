@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Header Simple - Grano Dorado</title>
+    <style>
+        /* CSS simplificado solo para el header */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f5f5f5;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo h2 {
+            color: #8B4513;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #1a1a1a;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: #DAA520;
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+        }
+        
+        /* Content styling */
+        .content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .debug-info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>Grano Dorado</h2>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="historia.html" class="nav-link">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="carta.html" class="nav-link">Carta</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>🔍 Diagnóstico Simple del Header</h1>
+        
+        <div class="debug-info">
+            <strong>🎯 Prueba Básica del Header</strong><br><br>
+            <strong>Lo que debes ver:</strong><br>
+            • En Desktop: Menú horizontal con links visibles<br>
+            • En Mobile: Hamburger menu funcional<br><br>
+            <strong>Ancho de ventana:</strong> <span id="width"></span>px
+        </div>
+        
+        <div class="test-section">
+            <h2>✅ Test de Funcionalidad</h2>
+            <p><strong>Desktop (>768px):</strong></p>
+            <ul>
+                <li>¿Ves el menú horizontal? <span id="desktop-menu"></span></li>
+                <li>¿Están todos los enlaces visibles? <span id="desktop-links"></span></li>
+                <li>¿El hamburger está oculto? <span id="desktop-hamburger"></span></li>
+            </ul>
+            
+            <p><strong>Mobile (≤768px):</strong></p>
+            <ul>
+                <li>¿Ves el hamburger? <span id="mobile-hamburger"></span></li>
+                <li>¿El menú está oculto inicialmente? <span id="mobile-menu"></span></li>
+                <li>¿El menú se despliega al hacer click? <span id="mobile-toggle"></span></li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h2>📱 Cambiar Tamaño de Ventana</h2>
+            <p>Cambia el tamaño de la ventana del navegador para probar el comportamiento responsive.</p>
+            <p>También puedes usar las herramientas de desarrollador (F12) para simular diferentes dispositivos.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript simple para el header
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                console.log('Menu toggled:', navMenu.classList.contains('active'));
+            });
+        }
+        
+        // Debug info
+        function updateDebugInfo() {
+            const width = window.innerWidth;
+            document.getElementById('width').textContent = width;
+            
+            // Check desktop
+            if (width > 768) {
+                document.getElementById('desktop-menu').textContent = getComputedStyle(navMenu).display === 'flex' ? '✅ Sí' : '❌ No';
+                document.getElementById('desktop-links').textContent = navMenu.children.length === 6 ? '✅ Sí' : '❌ No';
+                document.getElementById('desktop-hamburger').textContent = getComputedStyle(hamburger).display === 'none' ? '✅ Sí' : '❌ No';
+                
+                document.getElementById('mobile-hamburger').textContent = '⚪ N/A';
+                document.getElementById('mobile-menu').textContent = '⚪ N/A';
+                document.getElementById('mobile-toggle').textContent = '⚪ N/A';
+            } else {
+                document.getElementById('mobile-hamburger').textContent = getComputedStyle(hamburger).display === 'flex' ? '✅ Sí' : '❌ No';
+                document.getElementById('mobile-menu').textContent = !navMenu.classList.contains('active') ? '✅ Sí' : '❌ No';
+                document.getElementById('mobile-toggle').textContent = '🔄 Haz click en hamburger';
+                
+                document.getElementById('desktop-menu').textContent = '⚪ N/A';
+                document.getElementById('desktop-links').textContent = '⚪ N/A';
+                document.getElementById('desktop-hamburger').textContent = '⚪ N/A';
+            }
+        }
+        
+        updateDebugInfo();
+        window.addEventListener('resize', updateDebugInfo);
+        
+        console.log('Diagnóstico del header cargado');
+    </script>
+</body>
+</html>

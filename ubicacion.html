@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ubicación de Grano Dorado - Encuéntranos en Costa Rica. Oficinas, puntos de venta y cómo llegar.">
+    <meta name="keywords" content="ubicación, Grano Dorado, Costa Rica, dirección, mapa, cómo llegar">
+    <title>Ubicación - Grano Dorado</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>Grano Dorado</h2>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="historia.html" class="nav-link">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ubicacion.html" class="nav-link active">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title fade-in">Nuestra Ubicación</h1>
+            <p class="page-subtitle fade-in">Encuéntranos en el corazón de Costa Rica</p>
+            <div class="breadcrumb fade-in">
+                <a href="index.html">Inicio</a> 
+                <span class="separator">></span> 
+                <span>Ubicación</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <!-- Map Section -->
+            <div class="map-container reveal">
+                <h2 class="section-title">¿Cómo Llegar?</h2>
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.7869696204236!2d-84.07778692507577!3d9.934739590114494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50b0c3d%3A0x4e326c94f1cb0076!2sSan%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1sen!2scr!4v1703123456789!5m2!1sen!2scr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de Grano Dorado">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Location Details -->
+            <div class="location-details">
+                <div class="locations-grid">
+                    <!-- Headquarters -->
+                    <div class="location-card reveal">
+                        <div class="location-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Oficina Principal</h3>
+                        <div class="location-info">
+                            <p class="address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Avenida Central, San José<br>
+                                Costa Rica, C.P. 10101
+                            </p>
+                            <p class="phone">
+                                <i class="fas fa-phone"></i>
+                                +506 1234-5678
+                            </p>
+                            <p class="email">
+                                <i class="fas fa-envelope"></i>
+                                info@granodorado.com
+                            </p>
+                            <div class="hours">
+                                <h4><i class="fas fa-clock"></i> Horarios de Atención</h4>
+                                <ul>
+                                    <li>Lunes a Viernes: 8:00 AM - 6:00 PM</li>
+                                    <li>Sábados: 9:00 AM - 4:00 PM</li>
+                                    <li>Domingos: Cerrado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Production Facility -->
+                    <div class="location-card reveal">
+                        <div class="location-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Planta de Procesamiento</h3>
+                        <div class="location-info">
+                            <p class="address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Tarrazú, San Marcos<br>
+                                Costa Rica
+                            </p>
+                            <p class="description">
+                                <i class="fas fa-info-circle"></i>
+                                Aquí procesamos y tostamos nuestros granos de café con la más alta calidad.
+                            </p>
+                            <div class="tours">
+                                <h4><i class="fas fa-eye"></i> Tours Disponibles</h4>
+                                <p>Ofrecemos tours guiados previa cita para conocer nuestro proceso de producción.</p>
+                                <a href="contacto.html" class="tour-button">Reservar Tour</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Farm Location -->
+                    <div class="location-card reveal">
+                        <div class="location-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Finca Principal</h3>
+                        <div class="location-info">
+                            <p class="address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Montañas de Tarrazú<br>
+                                San Marcos, Costa Rica
+                            </p>
+                            <p class="altitude">
+                                <i class="fas fa-mountain"></i>
+                                Altitud: 1,200 - 1,800 msnm
+                            </p>
+                            <p class="description">
+                                <i class="fas fa-leaf"></i>
+                                Nuestra finca original donde cultivamos café de alta calidad en condiciones ideales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transportation Guide -->
+            <div class="transport-guide reveal">
+                <h2 class="section-title">Cómo Llegar a Nuestras Instalaciones</h2>
+                <div class="transport-options">
+                    <div class="transport-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="transport-info">
+                            <h4>En Automóvil</h4>
+                            <ul>
+                                <li>Desde Aeropuerto Juan Santamaría: 45 minutos aproximadamente</li>
+                                <li>Desde centro de San José: 15 minutos</li>
+                                <li>Estacionamiento disponible en las instalaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="transport-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="transport-info">
+                            <h4>Transporte Público</h4>
+                            <ul>
+                                <li>Autobús: Líneas que pasan por Avenida Central</li>
+                                <li>Parada más cercana: Terminal Central (3 cuadras)</li>
+                                <li>Tren urbano: Estación Central (5 minutos caminando)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="transport-option">
+                        <div class="transport-icon">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        <div class="transport-info">
+                            <h4>Taxi o Uber</h4>
+                            <ul>
+                                <li>Servicio disponible 24/7</li>
+                                <li>Tiempo promedio desde el aeropuerto: 45 min</li>
+                                <li>Costo aproximado: $25-35 USD desde SJO</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="location-cta reveal">
+                <h3>¿Necesitas Más Información?</h3>
+                <p>Nuestro equipo está listo para ayudarte a planificar tu visita</p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="cta-button">Contáctanos</a>
+                    <a href="https://wa.me/50612345678?text=Hola,%20necesito%20información%20sobre%20cómo%20llegar%20a%20Grano%20Dorado" 
+                       class="cta-button secondary" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Grano Dorado</h3>
+                    <p>Conectando el mundo con el mejor café de Costa Rica desde 2022.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Políticas</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Envíos y Entregas</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grano Dorado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50612345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20cafés%20de%20Grano%20Dorado" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Contáctanos!</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Grano Dorado</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .diagnostic { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .pass { background: #d4edda; border: 1px solid #c3e6cb; }
+        .fail { background: #f8d7da; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnóstico del Header - Grano Dorado</h1>
+    
+    <div id="results"></div>
+    
+    <script>
+        function runDiagnostics() {
+            const results = document.getElementById('results');
+            
+            // Lista de páginas a verificar
+            const pages = ['index.html', 'quienes-somos.html', 'historia.html', 'carta.html', 'blog.html', 'contacto.html'];
+            
+            pages.forEach(page => {
+                const iframe = document.createElement('iframe');
+                iframe.src = page;
+                iframe.style.display = 'none';
+                
+                iframe.onload = function() {
+                    try {
+                        const doc = iframe.contentDocument;
+                        const navbars = doc.querySelectorAll('.navbar');
+                        const navMenus = doc.querySelectorAll('#nav-menu');
+                        const navItems = doc.querySelectorAll('.nav-item');
+                        
+                        let diagnostic = `<div class="diagnostic ${navbars.length === 1 ? 'pass' : 'fail'}">`;
+                        diagnostic += `<h3>📄 ${page}</h3>`;
+                        diagnostic += `<p><strong>Navbars encontrados:</strong> ${navbars.length} ${navbars.length === 1 ? '✅' : '❌'}</p>`;
+                        diagnostic += `<p><strong>Nav menus encontrados:</strong> ${navMenus.length} ${navMenus.length === 1 ? '✅' : '❌'}</p>`;
+                        diagnostic += `<p><strong>Nav items encontrados:</strong> ${navItems.length} ${navItems.length === 6 ? '✅' : navItems.length > 6 ? '❌' : '⚠️'}</p>`;
+                        diagnostic += `</div>`;
+                        
+                        results.innerHTML += diagnostic;
+                    } catch (e) {
+                        results.innerHTML += `<div class="diagnostic fail"><h3>${page}</h3><p>❌ Error: ${e.message}</p></div>`;
+                    }
+                    
+                    document.body.removeChild(iframe);
+                };
+                
+                document.body.appendChild(iframe);
+            });
+        }
+        
+        // Ejecutar diagnósticos cuando se carga la página
+        window.addEventListener('load', runDiagnostics);
+    </script>
+</body>
+</html>
