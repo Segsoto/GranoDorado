@@ -19,6 +19,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Video Loading Screen -->
+    <div id="loadingScreen" class="video-loading">
+        <!-- Video Background -->
+        <video id="loadingVideo" class="loading-video" autoplay muted playsinline loop>
+            <source src="videos/80134-572367417_small.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Loading Overlay -->
+        <div class="loading-overlay">
+            <div class="loading-logo">
+                <img src="images/Logo_grano_de_café_ilustrado_marrón_-removebg-preview.png" alt="Grano Dorado" class="logo-image">
+                 
+            </div>
+            <p class="loading-text">Cargando...</p>
+            <div class="loading-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dark Mode Toggle -->
     <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
         <i class="fas fa-moon"></i>
@@ -29,6 +49,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">
+                    <img src="images/Logo_grano_de_café_ilustrado_marrón_-removebg-preview.png" alt="Grano Dorado" class="nav-logo-image">
                     <h2>Grano Dorado</h2>
                 </a>
             </div>
@@ -59,12 +80,25 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-background"></div>
+        
+        <!-- Coffee Beans Animation Container -->
+        <div class="coffee-beans-container" id="coffeeBeans"></div>
+        
+        <!-- Floating Background Beans -->
+        <div class="floating-beans-container">
+            <div class="floating-bean"></div>
+            <div class="floating-bean"></div>
+            <div class="floating-bean"></div>
+            <div class="floating-bean"></div>
+            <div class="floating-bean"></div>
+        </div>
+        
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title fade-in">Grano Dorado</h1>
                 <p class="hero-subtitle fade-in">Conecta con el mejor café</p>
                 <p class="hero-description fade-in">Descubre nuestra selección de cafés de alta calidad, cultivados con amor y respeto por la tierra</p>
-                <a href="https://wa.me/50612345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20cafés%20de%20Grano%20Dorado" target="_blank" class="cta-button fade-in">Contáctanos por WhatsApp</a>
+                <a href="https://wa.me/50612345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20cafés%20de%20Grano%20Dorado" target="_blank" class="cta-button fade-in" id="whatsappButton">Contáctanos por WhatsApp</a>
                 
             </div>
         </div>

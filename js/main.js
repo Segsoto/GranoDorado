@@ -2,8 +2,84 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    initializeLoadingScreen();
 });
+
+// ===== VIDEO LOADING SCREEN =====
+function initializeLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const video = document.getElementById('loadingVideo');
+    const progressBar = document.getElementById('progressBar');
+    
+    if (!loadingScreen) {
+        initializeApp();
+        return;
+    }
+    
+    document.body.style.overflow = 'hidden';
+    let loadingComplete = false;
+    let videoDuration = 4; // Default 4 seconds
+    
+    // Start progress bar animation immediately
+    animateProgressBar(progressBar, videoDuration);
+    
+    if (video) {
+        // When video metadata is loaded, get real duration
+        video.addEventListener('loadedmetadata', function() {
+            videoDuration = Math.max(video.duration, 3); // Minimum 3 seconds
+            console.log('Video loaded, duration:', videoDuration + 's');
+        });
+        
+        // Try to play the video
+        video.addEventListener('canplaythrough', function() {
+            video.play().catch(function(error) {
+                console.log('Video autoplay failed, but continuing with timer');
+            });
+        });
+        
+        // When video ends naturally (if not looping)
+        video.addEventListener('ended', function() {
+            completeLoading();
+        });
+    }
+    
+    // Always complete loading after the duration time
+    setTimeout(function() {
+        completeLoading();
+    }, videoDuration * 1000);
+    
+    function completeLoading() {
+        if (loadingComplete) return;
+        loadingComplete = true;
+        
+        loadingScreen.classList.add('fade-out');
+        document.body.style.overflow = '';
+        
+        setTimeout(function() {
+            if (loadingScreen.parentNode) {
+                loadingScreen.parentNode.removeChild(loadingScreen);
+            }
+        }, 800);
+        
+        initializeApp();
+    }
+}
+
+function animateProgressBar(progressBar, duration) {
+    if (!progressBar) return;
+    
+    let progress = 0;
+    const increment = 100 / (duration * 20); // Update 20 times per second
+    
+    const interval = setInterval(function() {
+        progress += increment;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+        }
+        progressBar.style.width = progress + '%';
+    }, 50);
+}
 
 // ===== MAIN INITIALIZATION =====
 function initializeApp() {
@@ -16,6 +92,8 @@ function initializeApp() {
     initializeAnimations();
     initializeParallax();
     initializeMicroInteractions();
+    initializeCoffeeBeans(); // Add coffee beans animation
+    createScrollTrailEffect(); // Add scroll trail effect
     
     // Add event listeners
     addGlobalEventListeners();
@@ -764,6 +842,20 @@ function addGlobalEventListeners() {
         }
     });
     
+    // Coffee beans effect on WhatsApp button click
+    const whatsappButton = document.getElementById('whatsappButton');
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', function(e) {
+            // Trigger golden coffee beans effect
+            triggerCoffeeBeansEffect();
+            
+            // Add a small delay to let the effect start before navigation
+            setTimeout(() => {
+                // The default link behavior will execute
+            }, 100);
+        });
+    }
+    
     // Handle window resize
     window.addEventListener('resize', function() {
         // Close mobile menu on resize
@@ -885,6 +977,92 @@ function announceToScreenReader(message) {
     setTimeout(() => {
         document.body.removeChild(announcement);
     }, 1000);
+}
+
+// ===== COFFEE BEANS FALLING ANIMATION =====
+function initializeCoffeeBeans() {
+    const coffeeBeansContainer = document.getElementById('coffeeBeans');
+    if (!coffeeBeansContainer) return;
+
+    // Only add subtle floating beans after loading screen
+    const hasVisited = localStorage.getItem('granoDoradoVisited');
+    if (hasVisited) {
+        // Add very subtle floating animation for return visitors
+        addSubtleFloatingBeans();
+        return;
+    }
+
+    // For first-time visitors after loading screen, add gentle falling animation
+    setTimeout(() => {
+        addGentleFallingAnimation();
+    }, 2000);
+}
+
+function addSubtleFloatingBeans() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    // Add floating beans container to hero
+    const floatingContainer = document.createElement('div');
+    floatingContainer.className = 'floating-beans-container';
+    floatingContainer.innerHTML = `
+        <div class="floating-bean"></div>
+        <div class="floating-bean"></div>
+        <div class="floating-bean"></div>
+    `;
+    hero.appendChild(floatingContainer);
+}
+
+function addGentleFallingAnimation() {
+    const coffeeBeansContainer = document.getElementById('coffeeBeans');
+    if (!coffeeBeansContainer) return;
+
+    function createGentleBean() {
+        const bean = document.createElement('div');
+        bean.className = 'coffee-bean small';
+        bean.style.left = Math.random() * 100 + '%';
+        bean.style.animationDuration = '6s';
+        bean.style.opacity = '0.3';
+        
+        coffeeBeansContainer.appendChild(bean);
+        
+        setTimeout(() => {
+            if (bean.parentNode) {
+                bean.parentNode.removeChild(bean);
+            }
+        }, 7000);
+    }
+
+    // Very gentle and sparse falling animation
+    setInterval(() => {
+        if (Math.random() < 0.2) { // Only 20% chance
+            createGentleBean();
+        }
+    }, 3000);
+}
+
+// Function to trigger beans on special events
+function triggerCoffeeBeansEffect() {
+    const coffeeBeansContainer = document.getElementById('coffeeBeans');
+    if (!coffeeBeansContainer) return;
+    
+    // Create a burst of golden beans
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+            const bean = document.createElement('div');
+            bean.className = 'coffee-bean golden';
+            bean.style.left = (30 + Math.random() * 40) + '%';
+            bean.style.animationDelay = (Math.random() * 0.3) + 's';
+            
+            coffeeBeansContainer.appendChild(bean);
+            
+            setTimeout(() => {
+                if (bean.parentNode) {
+                    bean.parentNode.removeChild(bean);
+                }
+            }, 5000);
+        }, i * 150);
+    }
 }
 
 // ===== SERVICE WORKER REGISTRATION (PWA READY) =====
