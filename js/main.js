@@ -11,10 +11,20 @@ function initializeLoadingScreen() {
     const video = document.getElementById('loadingVideo');
     const progressBar = document.getElementById('progressBar');
     
-    if (!loadingScreen) {
+    // Check if this is the first visit
+    const hasSeenLoading = localStorage.getItem('granoDorado_hasSeenLoading');
+    
+    if (!loadingScreen || hasSeenLoading === 'true') {
+        // Hide loading screen immediately if not first visit
+        if (loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
         initializeApp();
         return;
     }
+    
+    // Mark that user has seen the loading screen
+    localStorage.setItem('granoDorado_hasSeenLoading', 'true');
     
     document.body.style.overflow = 'hidden';
     let loadingComplete = false;
