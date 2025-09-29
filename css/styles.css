@@ -1281,9 +1281,18 @@ a:hover {
     --fs-2xl: 1.5rem;
   }
   
+  /* Adjust nav container for mobile */
+  .nav-container {
+    padding: var(--spacing-sm) var(--spacing-md);
+    position: relative;
+  }
+  
   /* Show hamburger menu */
   .hamburger {
     display: flex;
+    position: relative;
+    margin-right: 0;
+    z-index: 1002;
   }
   
   /* Hide navigation menu by default */
@@ -1367,9 +1376,10 @@ a:hover {
   
   .dark-mode-toggle {
     top: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
+    right: 70px; /* Move left to avoid hamburger menu */
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
   
   .back-to-top {
@@ -1418,6 +1428,18 @@ a:hover {
   
   .timeline::before {
     left: 15px;
+  }
+  
+  /* Extra adjustments for very small screens */
+  .dark-mode-toggle {
+    right: 60px; /* Even more space from hamburger */
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-container {
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 
