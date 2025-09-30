@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubre la historia de Grano Dorado desde 2022 - Un viaje de pasión por el café, crecimiento y compromiso con la excelencia.">
     <meta name="keywords" content="historia, grano dorado, café, timeline, evolución, Costa Rica, Tarrazú">
@@ -49,10 +57,18 @@
                 </li>
             </ul>
             
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-right">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
             </div>
         </div>
     </nav>
@@ -380,12 +396,19 @@
         <span class="whatsapp-tooltip">¡Contáctanos!</span>
     </a>
 
+    <!-- Coffee Recommender Float Button -->
+    <button class="coffee-recommender-float" id="coffeeRecommenderFloat" aria-label="Encuentra tu café ideal">
+        <i class="fas fa-search"></i>
+        <span class="recommender-tooltip">Encuentra tu café ideal</span>
+    </button>
+
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- JavaScript -->
+    <script src="js/coffee-recommender.js"></script>
     <script src="js/animaciones-simples.js"></script>
     <script src="js/main.js"></script>
 </body>
