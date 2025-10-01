@@ -145,6 +145,12 @@ a:hover {
   color: var(--coffee-brown);
 }
 
+/* Estilo específico para el título de valores */
+.values-preview .section-subtitle {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
 /* ===== ANIMACIONES ULTRA SIMPLES ===== */
 .reveal {
   opacity: 0;
