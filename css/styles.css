@@ -1501,8 +1501,8 @@ a:hover {
 /* ===== BACK TO TOP ===== */
 .back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   width: 50px;
   height: 50px;
   background: var(--coffee-brown);
@@ -1765,8 +1765,8 @@ a:hover {
   }
   
   .back-to-top {
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     width: 45px;
     height: 45px;
   }
@@ -2311,7 +2311,7 @@ body.menu-open {
 /* ===== WHATSAPP FLOATING BUTTON ===== */
 .whatsapp-float {
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -2383,7 +2383,7 @@ body.menu-open {
 /* Mobile adjustments for WhatsApp button */
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 70px;
+    bottom: 80px;
     right: 15px;
     width: 50px;
     height: 50px;
@@ -2910,7 +2910,8 @@ body.menu-open {
 
 /* Challenges Section */
 .challenges-section {
-  padding: var(--spacing-xxl) 0;
+  padding-top: calc(var(--spacing-xxl) * 2);
+  padding-bottom: var(--spacing-xxl);
 }
 
 .challenges-grid {
@@ -4421,9 +4422,10 @@ body.menu-open {
   }
   
   .notification-float-button {
-    bottom: 80px;
-    right: 20px;
-    left: auto;
+    bottom: 20px;
+    left: 20px;
+    width: 55px;
+    height: 55px;
   }
 }
 
@@ -4446,7 +4448,7 @@ body.menu-open {
 /* Coffee Recommender Float Button */
 .coffee-recommender-float {
   position: fixed;
-  bottom: 150px;
+  bottom: 160px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -4495,7 +4497,7 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .coffee-recommender-float {
-    bottom: 130px;
+    bottom: 145px;
     right: 15px;
     width: 50px;
     height: 50px;
