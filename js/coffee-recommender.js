@@ -59,7 +59,7 @@ class CoffeeRecommender {
         const floatBtn = document.getElementById('coffeeRecommenderFloat');
         const mainBtn = document.getElementById('coffeeRecommenderBtn');
         const modal = document.getElementById('coffeeRecommenderModal');
-        const closeBtn = document.getElementById('coffeeModalClose');
+        const closeBtn = document.getElementById('closeRecommenderModal');
         
         if (floatBtn) {
             floatBtn.addEventListener('click', () => this.openModal());
@@ -163,6 +163,9 @@ class CoffeeRecommender {
         }
         
         if (nextBtn) {
+            // El botón siguiente siempre es visible
+            nextBtn.style.display = 'flex';
+            
             if (this.currentStep === this.maxSteps) {
                 nextBtn.innerHTML = 'Ver Recomendación <i class="fas fa-star"></i>';
             } else {
@@ -172,6 +175,13 @@ class CoffeeRecommender {
             const currentStepEl = document.querySelector(`[data-step="${this.currentStep}"]`);
             const hasSelection = currentStepEl && currentStepEl.querySelector('.option-btn.selected');
             nextBtn.disabled = !hasSelection;
+            
+            // Agregar clase para hacer el botón más visible cuando está deshabilitado
+            if (!hasSelection) {
+                nextBtn.classList.add('waiting-selection');
+            } else {
+                nextBtn.classList.remove('waiting-selection');
+            }
         }
     }
 
