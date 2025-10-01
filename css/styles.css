@@ -2398,6 +2398,11 @@ body.menu-open {
   margin-bottom: var(--spacing-xl);
 }
 
+.map-container .section-title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .map-wrapper {
   border-radius: var(--radius-lg);
   overflow: hidden;
