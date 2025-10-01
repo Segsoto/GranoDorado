@@ -253,7 +253,7 @@ class CoffeeRecommender {
         if (brewingEl) brewingEl.textContent = `Ideal para: ${coffee.brewing}`;
         
         if (orderBtn) {
-            const whatsappUrl = `https://wa.me/50612345678?text=${encodeURIComponent(coffee.whatsappText)}`;
+            const whatsappUrl = `https://wa.me/50687104694?text=${encodeURIComponent(coffee.whatsappText)}`;
             orderBtn.href = whatsappUrl;
             orderBtn.target = '_blank';
         }
