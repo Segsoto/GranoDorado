@@ -1061,4 +1061,36 @@ window.addEventListener('load', function() {
     setTimeout(info, 2000);
 });
 
+// ===== SCROLL ARROW FUNCTIONALITY =====
+// Inicializar funcionalidad de la flechita de scroll
+function initializeScrollArrow() {
+    const scrollArrow = document.getElementById('scrollArrow');
+    const contenidoSection = document.getElementById('contenido');
+    
+    if (scrollArrow && contenidoSection) {
+        scrollArrow.addEventListener('click', function() {
+            console.log('🔽 Flechita clickeada - navegando a contenido...');
+            
+            // Smooth scroll hasta la sección de contenido
+            contenidoSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Pequeña animación en la flecha
+            scrollArrow.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                scrollArrow.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        console.log('✅ Flechita de scroll inicializada');
+    }
+}
+
+// Agregar a la inicialización principal
+document.addEventListener('DOMContentLoaded', function() {
+    initializeScrollArrow();
+});
+
 console.log('✅ Script principal cargado correctamente');
