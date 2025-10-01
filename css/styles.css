@@ -1503,8 +1503,8 @@ a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background: var(--coffee-brown);
   color: var(--primary-white);
   border: none;
@@ -1517,7 +1517,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-lg);
+  font-size: 1.5rem;
 }
 
 .back-to-top.visible {
@@ -2313,8 +2313,8 @@ body.menu-open {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background: #25d366;
   border-radius: 50%;
   display: flex;
@@ -2385,8 +2385,8 @@ body.menu-open {
   .whatsapp-float {
     bottom: 80px;
     right: 15px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
   
   .whatsapp-float i {
@@ -4450,8 +4450,8 @@ body.menu-open {
   position: fixed;
   bottom: 160px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background: linear-gradient(135deg, #FFD700, #FFA500);
   border: none;
   border-radius: 50%;
@@ -4499,8 +4499,8 @@ body.menu-open {
   .coffee-recommender-float {
     bottom: 145px;
     right: 15px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
   
   .coffee-recommender-float i {
