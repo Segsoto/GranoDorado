@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
+        <i class="fas fa-moon"></i>
+    </button>"es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +22,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">
+                    <img src="images/Logo_grano_de_café_ilustrado_marrón_-removebg-preview.png" alt="Grano Dorado" class="nav-logo-image">
                     <h2>Grano Dorado</h2>
                 </a>
             </div>
@@ -64,8 +63,7 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <div class="page-header-content">
-            <h1 class="page-title fade-in">Nuestra Ubicación</h1>
+ 
             
                 <span class="separator"></span> 
                 <span></span>
@@ -78,6 +76,7 @@
         <div class="container">
             <!-- Map Section -->
             <div class="map-container reveal">
+                
                 <h2 class="section-title">¿Cómo Llegar?</h2>
                 <div class="map-wrapper">
                     <iframe 
@@ -288,12 +287,172 @@
         <span class="whatsapp-tooltip">¡Contáctanos!</span>
     </a>
 
+    <!-- Coffee Recommender Float Button -->
+    <button class="coffee-recommender-float" id="coffeeRecommenderFloat" aria-label="Encuentra tu café ideal">
+        <i class="fas fa-search"></i>
+        <span class="recommender-tooltip">Encuentra tu café ideal</span>
+    </button>
+
+    <!-- Coffee Recommender Modal -->
+    <div id="coffeeRecommenderModal" class="modal-overlay">
+        <div class="modal-content coffee-recommender-modal">
+            <div class="modal-header">
+                <h2>🔍 Encuentra tu Café Ideal</h2>
+                <button class="modal-close" id="closeRecommenderModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="quiz-container">
+                <!-- Step 1: Intensity -->
+                <div class="quiz-step active" data-step="1">
+                    <h3>¿Qué intensidad prefieres?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-value="suave">
+                            <i class="fas fa-feather"></i>
+                            <span>Suave</span>
+                            <small>Sabor delicado y ligero</small>
+                        </button>
+                        <button class="option-btn" data-value="medio">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Medio</span>
+                            <small>Equilibrado y aromático</small>
+                        </button>
+                        <button class="option-btn" data-value="fuerte">
+                            <i class="fas fa-fire"></i>
+                            <span>Fuerte</span>
+                            <small>Intenso y robusto</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Flavor Profile -->
+                <div class="quiz-step" data-step="2">
+                    <h3>¿Qué sabores te gustan más?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-value="frutal">
+                            <i class="fas fa-apple-alt"></i>
+                            <span>Frutal</span>
+                            <small>Notas cítricas y frescas</small>
+                        </button>
+                        <button class="option-btn" data-value="chocolate">
+                            <i class="fas fa-cookie-bite"></i>
+                            <span>Chocolate</span>
+                            <small>Dulce y achocolatado</small>
+                        </button>
+                        <button class="option-btn" data-value="nueces">
+                            <i class="fas fa-seedling"></i>
+                            <span>Nueces</span>
+                            <small>Tostado y terroso</small>
+                        </button>
+                        <button class="option-btn" data-value="floral">
+                            <i class="fas fa-flower"></i>
+                            <span>Floral</span>
+                            <small>Delicado y aromático</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Brewing Method -->
+                <div class="quiz-step" data-step="3">
+                    <h3>¿Cómo preparas tu café?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-value="espresso">
+                            <i class="fas fa-coffee"></i>
+                            <span>Espresso</span>
+                            <small>Máquina de espresso</small>
+                        </button>
+                        <button class="option-btn" data-value="v60">
+                            <i class="fas fa-filter"></i>
+                            <span>V60/Filtrado</span>
+                            <small>Métodos de goteo</small>
+                        </button>
+                        <button class="option-btn" data-value="prensa">
+                            <i class="fas fa-compress"></i>
+                            <span>Prensa Francesa</span>
+                            <small>Inmersión completa</small>
+                        </button>
+                        <button class="option-btn" data-value="moka">
+                            <i class="fas fa-fire"></i>
+                            <span>Moka/Greca</span>
+                            <small>Estufa tradicional</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Time of Day -->
+                <div class="quiz-step" data-step="4">
+                    <h3>¿Cuándo tomas más café?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-value="mañana">
+                            <i class="fas fa-sun"></i>
+                            <span>Mañana</span>
+                            <small>Para empezar el día</small>
+                        </button>
+                        <button class="option-btn" data-value="tarde">
+                            <i class="fas fa-clock"></i>
+                            <span>Tarde</span>
+                            <small>Después del almuerzo</small>
+                        </button>
+                        <button class="option-btn" data-value="todo">
+                            <i class="fas fa-clock"></i>
+                            <span>Todo el día</span>
+                            <small>Soy adicto al café</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="quiz-step" data-step="results">
+                    <div class="results-container">
+                        <h3>🎯 Tu Café Perfecto</h3>
+                        <div class="recommended-coffee">
+                            <div class="coffee-image">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="coffee-details">
+                                <h4 id="recommendedName">Café Recomendado</h4>
+                                <p id="recommendedDescription">Descripción del café perfecto para ti</p>
+                                <div class="coffee-attributes">
+                                    <span class="attribute" id="intensityLevel">Intensidad: Media</span>
+                                    <span class="attribute" id="flavorNotes">Notas: Chocolate y nueces</span>
+                                    <span class="attribute" id="brewingTip">Ideal para: Prensa francesa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <a href="#" id="orderCoffeeBtn" class="cta-button">Pedir por WhatsApp</a>
+                            <button class="cta-button secondary" id="retakeQuizBtn">Repetir Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="quiz-navigation">
+                    <button class="nav-btn" id="prevBtn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </button>
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">1 de 4</span>
+                    </div>
+                    <button class="nav-btn" id="nextBtn" disabled>
+                        Siguiente <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- JavaScript -->
+    <script src="js/coffee-recommender.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
