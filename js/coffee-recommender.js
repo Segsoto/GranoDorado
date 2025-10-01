@@ -57,11 +57,16 @@ class CoffeeRecommender {
 
     bindEvents() {
         const floatBtn = document.getElementById('coffeeRecommenderFloat');
+        const mainBtn = document.getElementById('coffeeRecommenderBtn');
         const modal = document.getElementById('coffeeRecommenderModal');
-        const closeBtn = document.getElementById('closeRecommenderModal');
+        const closeBtn = document.getElementById('coffeeModalClose');
         
         if (floatBtn) {
             floatBtn.addEventListener('click', () => this.openModal());
+        }
+        
+        if (mainBtn) {
+            mainBtn.addEventListener('click', () => this.openModal());
         }
         
         if (closeBtn) {

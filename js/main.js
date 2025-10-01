@@ -102,8 +102,7 @@ function initializeApp() {
     // Marcar como inicializado
     window.animationsInitialized = true;
     
-    // Initialize all components
-    initializeNavigation();
+    // Initialize all components (navigation already initialized in DOMContentLoaded)
     initializeScrollEffects();
     initializeProductFilters();
     initializeContactForm();
@@ -111,12 +110,67 @@ function initializeApp() {
     initializeParallax();
     initializeMicroInteractions();
     initializeCoffeeBeans();
+    initializeCoffeeRecommender();
     createScrollTrailEffect();
     
     // Add event listeners
     addGlobalEventListeners();
     
     console.log('✅ Aplicación inicializada correctamente');
+}
+
+// ===== DARK MODE =====
+function initializeDarkMode() {
+    console.log('🌙 Inicializando modo oscuro...');
+    
+    // Get all dark mode toggle buttons
+    const darkModeToggles = document.querySelectorAll('.nav-dark-mode-toggle');
+    
+    // Check saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply the current theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Update button icons based on current theme
+    updateDarkModeButtons(currentTheme);
+    
+    // Add event listeners to all toggle buttons
+    darkModeToggles.forEach(button => {
+        button.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Apply new theme
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // Save preference
+            localStorage.setItem('theme', newTheme);
+            
+            // Update button icons
+            updateDarkModeButtons(newTheme);
+            
+            console.log(`🎨 Tema cambiado a: ${newTheme}`);
+        });
+    });
+}
+
+function updateDarkModeButtons(theme) {
+    const darkModeToggles = document.querySelectorAll('.nav-dark-mode-toggle');
+    const icon = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    const text = theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro';
+    
+    darkModeToggles.forEach(button => {
+        const iconElement = button.querySelector('i');
+        const textElement = button.querySelector('span');
+        
+        if (iconElement) {
+            iconElement.className = icon;
+        }
+        if (textElement) {
+            textElement.textContent = text;
+        }
+    });
 }
 
 function testAnimations() {
@@ -957,6 +1011,25 @@ function debounce(func, wait) {
     };
 }
 
+// ===== COFFEE RECOMMENDER INITIALIZATION =====
+function initializeCoffeeRecommender() {
+    // Check if CoffeeRecommender class is available
+    if (typeof CoffeeRecommender !== 'undefined') {
+        // CoffeeRecommender will initialize itself when its script loads
+        console.log('✅ Coffee Recommender available');
+    } else {
+        console.warn('⚠️ Coffee Recommender script not loaded');
+    }
+    
+    // Also ensure the button works even if recommender isn't loaded
+    const coffeeBtn = document.getElementById('coffeeRecommenderBtn');
+    if (coffeeBtn && typeof CoffeeRecommender === 'undefined') {
+        coffeeBtn.addEventListener('click', function() {
+            alert('Sistema de recomendaciones en mantenimiento. ¡Contáctanos por WhatsApp para ayudarte a elegir tu café ideal!');
+        });
+    }
+}
+
 // ===== ERROR HANDLING =====
 window.addEventListener('error', function(e) {
     console.error('⚠️ Error detectado:', e.error);
@@ -964,8 +1037,23 @@ window.addEventListener('error', function(e) {
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎯 DOM cargado, inicializando video loading...');
-    initializeVideoLoading();
+    console.log('🎯 DOM cargado, inicializando componentes...');
+    
+    // Always initialize navigation immediately
+    initializeNavigation();
+    initializeDarkMode();
+    
+    // Initialize video loading only on index page
+    if (document.getElementById('loadingScreen')) {
+        initializeVideoLoading();
+    } else {
+        // For other pages, initialize all components immediately
+        setTimeout(() => {
+            if (!window.animationsInitialized) {
+                initializeApp();
+            }
+        }, 100);
+    }
 });
 
 // Execute info function after load
