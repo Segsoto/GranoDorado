@@ -105,12 +105,14 @@ function initializeApp() {
     // Initialize all components
     initializeNavigation();
     initializeScrollEffects();
+    initializeDarkMode();
     initializeProductFilters();
     initializeContactForm();
     initializeAnimations();
     initializeParallax();
     initializeMicroInteractions();
     initializeCoffeeBeans();
+    initializeCoffeeRecommender();
     createScrollTrailEffect();
     
     // Add event listeners
@@ -955,6 +957,25 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+// ===== COFFEE RECOMMENDER INITIALIZATION =====
+function initializeCoffeeRecommender() {
+    // Check if CoffeeRecommender class is available
+    if (typeof CoffeeRecommender !== 'undefined') {
+        // CoffeeRecommender will initialize itself when its script loads
+        console.log('✅ Coffee Recommender available');
+    } else {
+        console.warn('⚠️ Coffee Recommender script not loaded');
+    }
+    
+    // Also ensure the button works even if recommender isn't loaded
+    const coffeeBtn = document.getElementById('coffeeRecommenderBtn');
+    if (coffeeBtn && typeof CoffeeRecommender === 'undefined') {
+        coffeeBtn.addEventListener('click', function() {
+            alert('Sistema de recomendaciones en mantenimiento. ¡Contáctanos por WhatsApp para ayudarte a elegir tu café ideal!');
+        });
+    }
 }
 
 // ===== ERROR HANDLING =====

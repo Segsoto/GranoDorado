@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <!-- Dark Mode Toggle             </ul>
-            
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
-        <i class="fas fa-moon"></i>
-    </button>ta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Grano Dorado - Café de alta calidad, comercio justo y sostenible. Conecta con el mejor café de origen.">
     <meta name="keywords" content="café, grano, alta calidad, comercio justo, sostenible, orgánico">
@@ -29,6 +19,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Video Loading Screen -->
     <div id="loadingScreen" class="video-loading">
         <!-- Video Background -->
@@ -39,9 +34,7 @@
         <!-- Loading Overlay -->
         <div class="loading-overlay">
             <div class="loading-logo">
-                <img src="images/Logo_grano_de_café_ilustrado_marrón_-removebg-preview.png" alt="Grano Dorado" class="logo-image">
-                 
-            </div>
+                    <img src="images/logo-grano-dorado.png" alt="Grano Dorado" class="logo-image">            </div>
             <p class="loading-text">Cargando...</p>
             <div class="loading-progress">
                 <div class="progress-bar" id="progressBar"></div>
@@ -54,7 +47,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">
-                    <img src="images/Logo_grano_de_café_ilustrado_marrón_-removebg-preview.png" alt="Grano Dorado" class="nav-logo-image">
+                    <img src="images/logo-grano-dorado.png" alt="Grano Dorado" class="nav-logo-image">
                     <h2>Grano Dorado</h2>
                 </a>
             </div>
@@ -80,18 +73,10 @@
                 </li>
             </ul>
             
-            <div class="nav-right">
-                <!-- Dark Mode Toggle -->
-                <button class="dark-mode-toggle" aria-label="Cambiar modo oscuro">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
@@ -431,6 +416,7 @@
     </button>
 
     <!-- JavaScript -->
+    <script src="js/main.js"></script>
     <script src="js/coffee-recommender.js"></script>
     <script src="js/video-rapido.js"></script>
     <script src="js/animaciones-simples.js"></script>
