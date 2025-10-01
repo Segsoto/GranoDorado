@@ -7,20 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== MAIN INITIALIZATION =====
 function initializeApp() {
-    // Initialize all components
-    initializeNavigation();
-    initializeScrollEffects();
-    initializeDarkMode();
-    initializeProductFilters();
-    initializeContactForm();
-    initializeAnimations();
-    initializeParallax();
-    initializeMicroInteractions();
-    
-    // Add event listeners
-    addGlobalEventListeners();
-    
-    console.log('Grano Dorado website initialized successfully! ☕');
+    try {
+        // Initialize all components
+        initializeNavigation();
+        initializeScrollEffects();
+        initializeDarkMode();
+        initializeProductFilters();
+        initializeContactForm();
+        initializeAnimations();
+        initializeParallax();
+        initializeMicroInteractions();
+        
+        // Add event listeners
+        addGlobalEventListeners();
+        
+        console.log('Grano Dorado website initialized successfully! ☕');
+    } catch (error) {
+        console.error('Error during app initialization:', error);
+        // Continue execution even if some features fail
+    }
 }
 
 // ===== NAVIGATION =====
@@ -29,6 +34,12 @@ function initializeNavigation() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Safety check - exit if essential elements don't exist
+    if (!navbar) {
+        console.warn('Navigation elements not found');
+        return;
+    }
     
     // Sticky navigation on scroll
     let lastScrollTop = 0;
@@ -188,31 +199,73 @@ function initializeScrollEffects() {
 // ===== DARK MODE =====
 function initializeDarkMode() {
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const navDarkModeToggle = document.querySelector('.nav-dark-mode-toggle');
     const body = document.body;
-    const icon = darkModeToggle.querySelector('i');
+    
+    // Safety check - at least one toggle must exist
+    if (!darkModeToggle && !navDarkModeToggle) {
+        console.warn('Dark mode toggles not found');
+        return;
+    }
     
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
     
-    darkModeToggle.addEventListener('click', function() {
+    // Handle floating toggle (desktop)
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            toggleTheme();
+            // Add ripple effect
+            addRippleEffect(this);
+        });
+    }
+    
+    // Handle navigation toggle (mobile)
+    if (navDarkModeToggle) {
+        navDarkModeToggle.addEventListener('click', function() {
+            toggleTheme();
+            // Add ripple effect
+            addRippleEffect(this);
+        });
+    }
+    
+    function toggleTheme() {
         const currentTheme = body.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
-        
-        // Add ripple effect
-        addRippleEffect(this);
-    });
+    }
     
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         
-        // Update icon
-        if (theme === 'dark') {
-            icon.className = 'fas fa-sun';
-        } else {
-            icon.className = 'fas fa-moon';
+        // Update all icons (both floating and nav toggles)
+        updateThemeIcons(theme);
+    }
+    
+    function updateThemeIcons(theme) {
+        const iconClass = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        const textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro';
+        
+        // Update floating toggle icon
+        if (darkModeToggle) {
+            const floatingIcon = darkModeToggle.querySelector('i');
+            if (floatingIcon) {
+                floatingIcon.className = iconClass;
+            }
+        }
+        
+        // Update navigation toggle icon and text
+        if (navDarkModeToggle) {
+            const navIcon = navDarkModeToggle.querySelector('i');
+            const navText = navDarkModeToggle.querySelector('span');
+            if (navIcon) {
+                navIcon.className = iconClass;
+            }
+            if (navText) {
+                navText.textContent = textContent;
+            }
         }
     }
 }
@@ -221,6 +274,11 @@ function initializeDarkMode() {
 function initializeProductFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
+    
+    // Safety check - these elements might not exist on all pages
+    if (filterBtns.length === 0 && productCards.length === 0) {
+        return; // No product elements found, exit gracefully
+    }
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -530,7 +588,7 @@ function initializeMicroInteractions() {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
         
-        button.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -575,19 +633,27 @@ function initializeTooltips() {
 
 // ===== UTILITY FUNCTIONS =====
 function addRippleEffect(element) {
+    if (!element) return;
+    
     const ripple = document.createElement('span');
     ripple.classList.add('ripple');
     element.appendChild(ripple);
     
     setTimeout(() => {
-        ripple.remove();
+        if (ripple && ripple.parentNode) {
+            ripple.remove();
+        }
     }, 600);
 }
 
 function addButtonPressEffect(button) {
+    if (!button) return;
+    
     button.style.transform = 'scale(0.95)';
     setTimeout(() => {
-        button.style.transform = 'scale(1)';
+        if (button) {
+            button.style.transform = 'scale(1)';
+        }
     }, 150);
 }
 
@@ -888,7 +954,7 @@ function announceToScreenReader(message) {
 }
 
 // ===== SERVICE WORKER REGISTRATION (PWA READY) =====
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')
             .then(function(registration) {

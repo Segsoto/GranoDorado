@@ -4,6 +4,7 @@
   --primary-black: #1a1a1a;
   --primary-white: #ffffff;
   --coffee-brown: #8B4513;
+  --coffee-brown-rgb: 139, 69, 19;
   --coffee-light: #D2691E;
   --gold-accent: #DAA520;
   --gold-light: #F4E4BC;
@@ -353,6 +354,41 @@ a:hover {
 .nav-link:hover::after,
 .nav-link.active::after {
   width: calc(100% - 2rem);
+}
+
+/* Navigation Dark Mode Toggle */
+.nav-dark-toggle {
+  display: none; /* Hidden by default on desktop */
+}
+
+.nav-dark-mode-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-black);
+  font-weight: 500;
+  position: relative;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.nav-dark-mode-toggle:hover {
+  color: var(--gold-accent);
+}
+
+.nav-dark-mode-toggle i {
+  font-size: 1.2rem;
+}
+
+[data-theme="dark"] .nav-dark-mode-toggle {
+  color: var(--primary-white);
 }
 
 /* Hamburger Menu (hidden by default) */
@@ -1199,11 +1235,44 @@ a:hover {
     left: 20px;
   }
   
+  /* Hide floating dark mode toggle on mobile */
   .dark-mode-toggle {
-    top: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
+    display: none;
+  }
+  
+  /* Show dark mode toggle in navigation menu */
+  .nav-dark-toggle {
+    display: block;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  [data-theme="dark"] .nav-dark-toggle {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  
+  .nav-dark-mode-toggle {
+    padding: 1rem 2rem;
+    width: calc(100% - 2rem);
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(var(--coffee-brown-rgb), 0.1);
+    margin: 0 1rem;
+    transition: all var(--transition-fast);
+  }
+  
+  .nav-dark-mode-toggle:hover {
+    background: rgba(var(--coffee-brown-rgb), 0.2);
+    transform: translateY(-1px);
+  }
+  
+  [data-theme="dark"] .nav-dark-mode-toggle {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  [data-theme="dark"] .nav-dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
   
   .back-to-top {
