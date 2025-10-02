@@ -5,7 +5,6 @@ Sitio web corporativo para Grano Dorado, empresa de café de alta calidad con se
 
 ## Características
 - ✅ Diseño responsive
-- ✅ Modo oscuro/claro
 - ✅ Pantalla de carga con video
 - ✅ Animaciones suaves
 - ✅ Integración con WhatsApp

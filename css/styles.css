@@ -249,14 +249,6 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-[data-theme="dark"] .navbar {
-  background: rgba(26, 26, 26, 0.95);
-}
-
-[data-theme="dark"] .navbar.scrolled {
-  background: rgba(26, 26, 26, 0.98);
-}
-
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -385,11 +377,6 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-[data-theme="dark"] .nav-carta-highlight .carta-link {
-  background: linear-gradient(135deg, var(--gold-accent), var(--coffee-light));
-  color: var(--primary-black) !important;
-}
-
 /* ===== CARTA PROMOTION SECTION ===== */
 .carta-promotion {
   padding: var(--spacing-xxl) 0;
@@ -410,10 +397,6 @@ a:hover {
   z-index: 1;
 }
 
-[data-theme="dark"] .carta-promotion {
-  background: linear-gradient(135deg, var(--primary-black), rgba(218, 165, 32, 0.1));
-}
-
 .promotion-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -431,10 +414,6 @@ a:hover {
   text-align: left;
   margin-bottom: var(--spacing-md);
   color: var(--coffee-brown);
-}
-
-[data-theme="dark"] .promotion-text .section-title {
-  color: var(--gold-accent);
 }
 
 .promotion-text .section-description {
@@ -467,15 +446,6 @@ a:hover {
   background: rgba(255, 255, 255, 0.95);
 }
 
-[data-theme="dark"] .highlight-item {
-  background: rgba(218, 165, 32, 0.1);
-  border-left-color: var(--gold-accent);
-}
-
-[data-theme="dark"] .highlight-item:hover {
-  background: rgba(218, 165, 32, 0.2);
-}
-
 .highlight-item i {
   color: var(--coffee-brown);
   font-size: var(--fs-lg);
@@ -483,17 +453,9 @@ a:hover {
   text-align: center;
 }
 
-[data-theme="dark"] .highlight-item i {
-  color: var(--gold-accent);
-}
-
 .highlight-item span {
   font-weight: 500;
   color: var(--gray-dark);
-}
-
-[data-theme="dark"] .highlight-item span {
-  color: var(--primary-white);
 }
 
 /* Promotion Actions */
@@ -523,16 +485,6 @@ a:hover {
 .cta-button.secondary:hover {
   background: var(--coffee-brown);
   color: var(--primary-white);
-}
-
-[data-theme="dark"] .cta-button.secondary {
-  color: var(--gold-accent);
-  border-color: var(--gold-accent);
-}
-
-[data-theme="dark"] .cta-button.secondary:hover {
-  background: var(--gold-accent);
-  color: var(--primary-black);
 }
 
 /* Coffee Showcase */
@@ -566,15 +518,6 @@ a:hover {
   border-color: var(--gold-accent);
 }
 
-[data-theme="dark"] .showcase-item {
-  background: var(--gray-dark);
-  border-color: rgba(218, 165, 32, 0.1);
-}
-
-[data-theme="dark"] .showcase-item:hover {
-  border-color: var(--gold-accent);
-}
-
 .coffee-icon {
   width: 60px;
   height: 60px;
@@ -601,10 +544,6 @@ a:hover {
   margin-bottom: 0.5rem;
   color: var(--coffee-brown);
   font-size: var(--fs-lg);
-}
-
-[data-theme="dark"] .showcase-item h4 {
-  color: var(--gold-accent);
 }
 
 .showcase-item p {
@@ -674,10 +613,6 @@ a:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-[data-theme="dark"] .hamburger:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .bar {
   width: 28px;
   height: 3px;
@@ -685,10 +620,6 @@ a:hover {
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
-}
-
-[data-theme="dark"] .bar {
-  background: var(--primary-white);
 }
 
 .hamburger.active .bar:nth-child(1) {
@@ -1960,11 +1891,6 @@ a:hover {
     }
   }
   
-  /* Dark theme for mobile menu */
-  [data-theme="dark"] .nav-menu {
-    background: #1a1a1a;
-  }
-  
   /* Mobile menu items */
   .nav-item {
     margin: 0;
@@ -1973,12 +1899,8 @@ a:hover {
     text-align: center;
   }
   
-  .nav-item:not(.nav-dark-toggle) {
+  .nav-item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-  
-  [data-theme="dark"] .nav-item:not(.nav-dark-toggle) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .nav-link {
@@ -2002,43 +1924,6 @@ a:hover {
     background: var(--coffee-brown);
     color: var(--primary-white);
     transform: translateX(-8px);
-  }
-  
-  /* Dark mode toggle in mobile menu */
-  .nav-dark-toggle {
-    margin-top: var(--spacing-lg);
-    padding: var(--spacing-md);
-  }
-  
-  .nav-dark-mode-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.875rem 1.5rem;
-    background: rgba(139, 69, 19, 0.1);
-    border: 2px solid var(--coffee-brown);
-    border-radius: 25px;
-    color: var(--coffee-brown);
-    font-weight: 600;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-  }
-  
-  .nav-dark-mode-toggle:hover {
-    background: var(--coffee-brown);
-    color: var(--primary-white);
-    transform: scale(1.05);
-  }
-  
-  [data-theme="dark"] .nav-dark-mode-toggle {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-white);
-    color: var(--primary-white);
-  }
-  
-  [data-theme="dark"] .nav-dark-mode-toggle:hover {
-    background: var(--primary-white);
-    color: var(--primary-black);
   }
   
   /* Remove underline effect for mobile menu links */
@@ -2405,23 +2290,6 @@ body.menu-open {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
-
-/* Dark Mode Specific Adjustments */
-[data-theme="dark"] .image-placeholder {
-  background: linear-gradient(135deg, #374151, #4b5563);
-  color: #d1d5db;
-}
-
-[data-theme="dark"] .image-placeholder:hover {
-  background: linear-gradient(135deg, var(--coffee-light), var(--gold-light));
-  color: var(--primary-white);
-}
-
-[data-theme="dark"] .timeline-item::before {
-  border-color: var(--primary-black);
-}
-
-
 
 /* Enhanced Mobile Optimizations */
 @media (max-width: 768px) {
@@ -3105,32 +2973,6 @@ body.menu-open {
 .location-cta p {
   margin-bottom: var(--spacing-lg);
   opacity: 0.9;
-}
-
-/* Dark mode styles for location page */
-[data-theme="dark"] .location-card {
-  background: var(--surface-dark);
-  border-color: rgba(255,255,255,0.1);
-}
-
-[data-theme="dark"] .location-card h3 {
-  color: var(--gold-light);
-}
-
-[data-theme="dark"] .hours {
-  border-top-color: rgba(255,255,255,0.1);
-}
-
-[data-theme="dark"] .tours {
-  border-top-color: rgba(255,255,255,0.1);
-}
-
-[data-theme="dark"] .transport-guide {
-  background: var(--surface-dark);
-}
-
-[data-theme="dark"] .transport-info h4 {
-  color: var(--gold-light);
 }
 
 /* Mobile responsive adjustments */
@@ -5049,11 +4891,6 @@ body.loading {
   animation: modalSlideIn 0.3s ease-out;
 }
 
-[data-theme="dark"] .coffee-modal-content {
-  background: var(--primary-black);
-  color: var(--primary-white);
-}
-
 @keyframes modalSlideIn {
   from {
     opacity: 0;
@@ -5079,14 +4916,6 @@ body.loading {
 
 .coffee-modal-close:hover {
   color: #333;
-}
-
-[data-theme="dark"] .coffee-modal-close {
-  color: #ccc;
-}
-
-[data-theme="dark"] .coffee-modal-close:hover {
-  color: #fff;
 }
 
 .coffee-modal-header {
