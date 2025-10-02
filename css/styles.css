@@ -341,6 +341,322 @@ a:hover {
   width: calc(100% - 2rem);
 }
 
+/* Carta Link Highlight */
+.nav-carta-highlight .carta-link {
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  color: var(--primary-white) !important;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-medium);
+}
+
+.nav-carta-highlight .carta-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gold-accent), var(--coffee-light));
+  transition: left var(--transition-medium);
+}
+
+.nav-carta-highlight .carta-link:hover::before {
+  left: 0;
+}
+
+.nav-carta-highlight .carta-link i,
+.nav-carta-highlight .carta-link span {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-carta-highlight .carta-link::after {
+  display: none;
+}
+
+.nav-carta-highlight .carta-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .nav-carta-highlight .carta-link {
+  background: linear-gradient(135deg, var(--gold-accent), var(--coffee-light));
+  color: var(--primary-black) !important;
+}
+
+/* ===== CARTA PROMOTION SECTION ===== */
+.carta-promotion {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--gray-light), var(--gold-light));
+  position: relative;
+  overflow: hidden;
+}
+
+.carta-promotion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/fondo-index.jpg') center/cover;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+[data-theme="dark"] .carta-promotion {
+  background: linear-gradient(135deg, var(--primary-black), rgba(218, 165, 32, 0.1));
+}
+
+.promotion-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.promotion-text {
+  max-width: 500px;
+}
+
+.promotion-text .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+  color: var(--coffee-brown);
+}
+
+[data-theme="dark"] .promotion-text .section-title {
+  color: var(--gold-accent);
+}
+
+.promotion-text .section-description {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--fs-lg);
+}
+
+/* Coffee Highlights */
+.coffee-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--gold-accent);
+  transition: all var(--transition-medium);
+}
+
+.highlight-item:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .highlight-item {
+  background: rgba(218, 165, 32, 0.1);
+  border-left-color: var(--gold-accent);
+}
+
+[data-theme="dark"] .highlight-item:hover {
+  background: rgba(218, 165, 32, 0.2);
+}
+
+.highlight-item i {
+  color: var(--coffee-brown);
+  font-size: var(--fs-lg);
+  width: 20px;
+  text-align: center;
+}
+
+[data-theme="dark"] .highlight-item i {
+  color: var(--gold-accent);
+}
+
+.highlight-item span {
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+[data-theme="dark"] .highlight-item span {
+  color: var(--primary-white);
+}
+
+/* Promotion Actions */
+.promotion-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  color: var(--primary-white);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--coffee-brown);
+  border: 2px solid var(--coffee-brown);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cta-button.secondary:hover {
+  background: var(--coffee-brown);
+  color: var(--primary-white);
+}
+
+[data-theme="dark"] .cta-button.secondary {
+  color: var(--gold-accent);
+  border-color: var(--gold-accent);
+}
+
+[data-theme="dark"] .cta-button.secondary:hover {
+  background: var(--gold-accent);
+  color: var(--primary-black);
+}
+
+/* Coffee Showcase */
+.promotion-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coffee-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  max-width: 300px;
+}
+
+.showcase-item {
+  background: var(--primary-white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.showcase-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-accent);
+}
+
+[data-theme="dark"] .showcase-item {
+  background: var(--gray-dark);
+  border-color: rgba(218, 165, 32, 0.1);
+}
+
+[data-theme="dark"] .showcase-item:hover {
+  border-color: var(--gold-accent);
+}
+
+.coffee-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--spacing-sm);
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-medium);
+}
+
+.showcase-item:hover .coffee-icon {
+  background: linear-gradient(135deg, var(--gold-accent), var(--coffee-light));
+  transform: rotate(15deg) scale(1.1);
+}
+
+.coffee-icon i {
+  font-size: var(--fs-xl);
+  color: var(--primary-white);
+}
+
+.showcase-item h4 {
+  margin-bottom: 0.5rem;
+  color: var(--coffee-brown);
+  font-size: var(--fs-lg);
+}
+
+[data-theme="dark"] .showcase-item h4 {
+  color: var(--gold-accent);
+}
+
+.showcase-item p {
+  margin: 0;
+  color: var(--gray-medium);
+  font-size: var(--fs-sm);
+}
+
+/* Responsive Design for Promotion */
+@media (max-width: 768px) {
+  .promotion-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .promotion-text .section-title,
+  .promotion-text .section-description {
+    text-align: center;
+  }
+  
+  .promotion-actions {
+    justify-content: center;
+  }
+  
+  .coffee-showcase {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .showcase-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .coffee-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .coffee-icon i {
+    font-size: var(--fs-lg);
+  }
+  
+  .showcase-item h4 {
+    font-size: var(--fs-base);
+  }
+  
+  .showcase-item p {
+    font-size: var(--fs-xs);
+  }
+}
+
 /* Hamburger Menu (hidden by default) */
 .hamburger {
   display: none;
@@ -1624,6 +1940,14 @@ a:hover {
   .nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.2s; }
   .nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.25s; }
   .nav-menu.active .nav-item:nth-child(5) { animation-delay: 0.3s; }
+  .nav-menu.active .nav-item:nth-child(6) { animation-delay: 0.35s; }
+  
+  /* Carta link adjustments for mobile */
+  .nav-carta-highlight .carta-link {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: var(--radius-lg);
+  }
   
   @keyframes slideInFromRight {
     from {
@@ -4863,5 +5187,600 @@ body.loading {
   .coffee-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
+  }
+}
+
+/* ===== CARTA PAGE STYLES ===== */
+
+/* Carta Hero Section */
+.carta-hero {
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--coffee-brown) 0%, var(--coffee-light) 100%);
+}
+
+.carta-hero .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/fondo-index.jpg') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.carta-hero .hero-content {
+  position: relative;
+  z-index: 3;
+  color: var(--primary-white);
+  max-width: 800px;
+  padding: 0 var(--spacing-md);
+}
+
+.carta-hero .hero-title {
+  font-size: var(--fs-5xl);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carta-hero .hero-subtitle {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--gold-light);
+}
+
+.carta-hero .hero-description {
+  font-size: var(--fs-lg);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Coffee Menu Section */
+.coffee-menu {
+  padding: var(--spacing-xxl) 0;
+  background: var(--primary-white);
+}
+
+[data-theme="dark"] .coffee-menu {
+  background: var(--primary-black);
+}
+
+/* Coffee Categories Filter */
+.coffee-categories {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--coffee-brown);
+  background: transparent;
+  color: var(--coffee-brown);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  transition: left var(--transition-medium);
+  z-index: 0;
+}
+
+.category-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.category-btn:hover::before,
+.category-btn.active::before {
+  left: 0;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  color: var(--primary-white);
+  border-color: var(--coffee-brown);
+}
+
+[data-theme="dark"] .category-btn {
+  border-color: var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+[data-theme="dark"] .category-btn:hover,
+[data-theme="dark"] .category-btn.active {
+  color: var(--primary-black);
+}
+
+/* Coffee Grid */
+.coffee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+/* Coffee Card */
+.coffee-card {
+  background: var(--primary-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+}
+
+.coffee-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coffee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+[data-theme="dark"] .coffee-card {
+  background: var(--gray-dark);
+  border: 1px solid rgba(218, 165, 32, 0.1);
+}
+
+/* Coffee Card Image */
+.coffee-card-image {
+  height: 200px;
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coffee-card-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/fondo-index.jpg') center/cover;
+  opacity: 0.2;
+}
+
+.coffee-card-image i {
+  font-size: 4rem;
+  color: var(--primary-white);
+  z-index: 2;
+  position: relative;
+}
+
+/* Intensity Badge */
+.intensity-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--primary-white);
+  z-index: 3;
+}
+
+.intensity-suave {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.intensity-medio {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+}
+
+.intensity-fuerte {
+  background: linear-gradient(135deg, #dc3545, #6f42c1);
+}
+
+/* Coffee Card Content */
+.coffee-card-content {
+  padding: var(--spacing-md);
+}
+
+.coffee-name {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--coffee-brown);
+}
+
+[data-theme="dark"] .coffee-name {
+  color: var(--gold-accent);
+}
+
+.coffee-short-description {
+  color: var(--gray-medium);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+/* Coffee Notes */
+.coffee-notes {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--gray-light);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--gold-accent);
+}
+
+[data-theme="dark"] .coffee-notes {
+  background: rgba(218, 165, 32, 0.1);
+}
+
+.notes-label {
+  font-weight: 600;
+  color: var(--coffee-brown);
+  margin-right: var(--spacing-xs);
+}
+
+[data-theme="dark"] .notes-label {
+  color: var(--gold-accent);
+}
+
+.notes-text {
+  color: var(--gray-medium);
+  font-style: italic;
+}
+
+/* Coffee Card Footer */
+.coffee-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+}
+
+.coffee-price {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--coffee-brown);
+}
+
+[data-theme="dark"] .coffee-price {
+  color: var(--gold-accent);
+}
+
+.view-details-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  color: var(--primary-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-details-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gold-accent), var(--coffee-light));
+  transition: left var(--transition-medium);
+}
+
+.view-details-btn:hover::before {
+  left: 0;
+}
+
+.view-details-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Coffee Modal */
+.coffee-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.coffee-modal.active {
+  opacity: 1;
+}
+
+.modal-content {
+  background: var(--primary-white);
+  border-radius: var(--radius-xl);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.7);
+  transition: transform var(--transition-medium);
+}
+
+.coffee-modal.active .modal-content {
+  transform: scale(1);
+}
+
+[data-theme="dark"] .modal-content {
+  background: var(--gray-dark);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 2rem;
+  color: var(--gray-medium);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--coffee-brown);
+  color: var(--primary-white);
+}
+
+/* Modal Body */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-coffee-image {
+  height: 250px;
+  background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.modal-coffee-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/fondo-index.jpg') center/cover;
+  opacity: 0.2;
+}
+
+.modal-coffee-image i {
+  font-size: 6rem;
+  color: var(--primary-white);
+  z-index: 2;
+}
+
+.modal-coffee-info {
+  padding: var(--spacing-xl);
+}
+
+.modal-coffee-name {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--coffee-brown);
+}
+
+[data-theme="dark"] .modal-coffee-name {
+  color: var(--gold-accent);
+}
+
+.modal-coffee-description {
+  font-size: var(--fs-lg);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  color: var(--gray-medium);
+}
+
+/* Coffee Details */
+.coffee-details {
+  margin-bottom: var(--spacing-xl);
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--gray-light);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--gold-accent);
+}
+
+[data-theme="dark"] .detail-item {
+  background: rgba(218, 165, 32, 0.1);
+}
+
+.detail-item strong {
+  min-width: 120px;
+  color: var(--coffee-brown);
+  margin-right: var(--spacing-sm);
+}
+
+[data-theme="dark"] .detail-item strong {
+  color: var(--gold-accent);
+}
+
+.detail-item span:not(strong) {
+  color: var(--gray-medium);
+  flex: 1;
+}
+
+/* Modal Actions */
+.modal-actions {
+  text-align: center;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: var(--primary-white);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #128c7e, #075e54);
+  transition: left var(--transition-medium);
+}
+
+.whatsapp-btn:hover::before {
+  left: 0;
+}
+
+.whatsapp-btn span,
+.whatsapp-btn i {
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Coffee Recommender Section */
+.coffee-recommender-section {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--gold-light), var(--gray-light));
+  text-align: center;
+}
+
+[data-theme="dark"] .coffee-recommender-section {
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), var(--primary-black));
+}
+
+.recommender-content {
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive Design for Carta */
+@media (max-width: 768px) {
+  .carta-hero {
+    min-height: 50vh;
+  }
+  
+  .carta-hero .hero-title {
+    font-size: var(--fs-4xl);
+  }
+  
+  .carta-hero .hero-subtitle {
+    font-size: var(--fs-xl);
+  }
+  
+  .coffee-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .coffee-categories {
+    gap: var(--spacing-xs);
+  }
+  
+  .category-btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-sm);
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: var(--spacing-md);
+  }
+  
+  .modal-body {
+    flex-direction: column;
+  }
+  
+  .modal-coffee-image {
+    height: 200px;
+  }
+  
+  .modal-coffee-image i {
+    font-size: 4rem;
+  }
+  
+  .modal-coffee-info {
+    padding: var(--spacing-md);
+  }
+  
+  .modal-coffee-name {
+    font-size: var(--fs-2xl);
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .detail-item strong {
+    min-width: auto;
+    margin-bottom: 0.25rem;
   }
 }

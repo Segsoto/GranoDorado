@@ -51,6 +51,7 @@
                 <li class="nav-item">
                     <a href="index.html" class="nav-link active">Inicio</a>
                 </li>
+                 
                 <li class="nav-item">
                     <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
                 </li>
@@ -59,6 +60,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="ubicacion.html" class="nav-link">Ubicación</a>
+                </li>
+                <li class="nav-item nav-carta-highlight">
+                    <a href="carta.html" class="nav-link carta-link">
+                        <i class="fas fa-coffee"></i>
+                        <span>Carta</span>
+                    </a>
                 </li>
                 <li class="nav-item nav-dark-toggle">
                     <button class="nav-dark-mode-toggle" aria-label="Cambiar modo oscuro">
@@ -111,6 +118,70 @@
         <div class="scroll-indicator">
             <div class="scroll-arrow" id="scrollArrow" style="cursor: pointer;">
                 <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Menu Promotion Section -->
+    <section class="carta-promotion" id="carta-promotion">
+        <div class="container">
+            <div class="promotion-content">
+                <div class="promotion-text reveal">
+                    <h2 class="section-title">Descubre Nuestra Carta</h2>
+                    <p class="section-description">Explora nuestra selección premium de cafés, cada uno con su historia única y perfil de sabor distintivo</p>
+                    
+                    <div class="coffee-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Cafés de origen único</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-medal"></i>
+                            <span>Calidad premium</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Pedidos por WhatsApp</span>
+                        </div>
+                    </div>
+                    
+                    <div class="promotion-actions">
+                        <a href="carta.html" class="cta-button primary">
+                            <i class="fas fa-coffee"></i>
+                            Ver Carta Completa
+                        </a>
+                        <button class="cta-button secondary" id="quickRecommender">
+                            <i class="fas fa-magic"></i>
+                            Recomendación Rápida
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="promotion-visual reveal">
+                    <div class="coffee-showcase">
+                        <div class="showcase-item" data-coffee="premium">
+                            <div class="coffee-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h4>Geisha Premium</h4>
+                            <p>Exclusivo y excepcional</p>
+                        </div>
+                        <div class="showcase-item" data-coffee="classic">
+                            <div class="coffee-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h4>Clásico Dorado</h4>
+                            <p>Equilibrado y versátil</p>
+                        </div>
+                        <div class="showcase-item" data-coffee="smooth">
+                            <div class="coffee-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h4>Suave Floral</h4>
+                            <p>Delicado y aromático</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -413,7 +484,7 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/coffee-recommender.js"></script>
-    <script src="js/notifications.js"></script>
+    
     <script src="js/video-rapido.js"></script>
     <script src="js/animaciones-simples.js"></script>
 </body>

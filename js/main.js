@@ -1088,9 +1088,45 @@ function initializeScrollArrow() {
     }
 }
 
+// ===== CARTA PROMOTION FUNCTIONS =====
+function initializeCartaPromotion() {
+    const quickRecommenderBtn = document.getElementById('quickRecommender');
+    
+    if (quickRecommenderBtn) {
+        quickRecommenderBtn.addEventListener('click', function() {
+            // Scroll to coffee recommender section if it exists
+            const recommenderSection = document.getElementById('coffee-recommender');
+            if (recommenderSection) {
+                recommenderSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Add a little animation to the button
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            }
+        });
+        
+        console.log('✅ Botón de recomendación rápida inicializado');
+    }
+    
+    // Initialize showcase items hover effects
+    const showcaseItems = document.querySelectorAll('.showcase-item');
+    showcaseItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Redirect to carta page with specific coffee highlighted
+            const coffeeType = this.dataset.coffee;
+            window.location.href = `carta.html#${coffeeType}`;
+        });
+    });
+    
+    console.log('✅ Items de showcase inicializados');
+}
+
 // Agregar a la inicialización principal
 document.addEventListener('DOMContentLoaded', function() {
     initializeScrollArrow();
+    initializeCartaPromotion();
 });
 
 console.log('✅ Script principal cargado correctamente');
