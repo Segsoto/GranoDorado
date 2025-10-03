@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressBar = document.getElementById('progressBar');
     
     if (!loadingScreen || !loadingVideo || !progressBar) {
-        console.warn('Loading screen elements not found');
         return;
     }
 
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle video load error
     loadingVideo.addEventListener('error', function() {
-        console.warn('Video failed to load, skipping loading screen');
         loadingScreen.style.display = 'none';
         document.body.classList.remove('loading');
     });
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ensure video plays
     loadingVideo.addEventListener('canplay', function() {
         loadingVideo.play().catch(function(error) {
-            console.warn('Video autoplay failed:', error);
+            // Video autoplay failed
         });
     });
 

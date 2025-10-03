@@ -1,5 +1,4 @@
 // ===== MAIN APPLICATION SCRIPT =====
-console.log('🚀 Inicializando Grano Dorado...');
 
 // Verificar video loading una sola vez
 function initializeVideoLoading() {
@@ -7,17 +6,13 @@ function initializeVideoLoading() {
     const loadingScreen = document.getElementById('loadingScreen');
     
     if (!loadingScreen) {
-        console.log('📍 No hay pantalla de carga en esta página');
         return;
     }
     
     if (hasSeenVideo === 'true') {
-        console.log('🎬 Usuario ya vio el video, ocultando pantalla de carga...');
         hideLoadingScreen();
         return;
     }
-    
-    console.log('🎬 Primera visita, mostrando video de carga...');
     
     // Marcar como visto inmediatamente
     localStorage.setItem('granoDorado_hasSeenVideo', 'true');
@@ -41,8 +36,6 @@ function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loadingScreen');
     if (!loadingScreen) return;
     
-    console.log('🎭 Ocultando pantalla de carga...');
-    
     // Fade out suave
     loadingScreen.classList.add('fade-out');
     document.body.style.overflow = '';
@@ -51,7 +44,6 @@ function hideLoadingScreen() {
     setTimeout(function() {
         if (loadingScreen.parentNode) {
             loadingScreen.parentNode.removeChild(loadingScreen);
-            console.log('🗑️ Pantalla de carga removida');
         }
     }, 300);
     
@@ -81,23 +73,11 @@ window.verVideoNuevamente = function() {
     location.reload();
 };
 
-window.info = function() {
-    console.log('ℹ️ === INFORMACIÓN DEL VIDEO ===');
-    const hasSeenVideo = localStorage.getItem('granoDorado_hasSeenVideo');
-    console.log('🎬 El video se reproduce SOLO la primera vez');
-    console.log('📍 Solo aparece en la página de inicio');
-    console.log('🔍 Estado actual:', hasSeenVideo ? 'Ya visto' : 'No visto');
-    console.log('🔄 Para ver nuevamente: verVideoNuevamente()');
-};
-
 // ===== MAIN INITIALIZATION =====
 function initializeApp() {
     if (window.animationsInitialized) {
-        console.log('App already initialized, skipping...');
         return;
     }
-    
-    console.log('🔧 Inicializando componentes principales...');
     
     // Marcar como inicializado
     window.animationsInitialized = true;
@@ -115,14 +95,9 @@ function initializeApp() {
     
     // Add event listeners
     addGlobalEventListeners();
-    
-    console.log('✅ Aplicación inicializada correctamente');
 }
 
-
-
 function testAnimations() {
-    console.log('🧪 Testing animations...');
     
     const elements = document.querySelectorAll('.reveal');
     elements.forEach((el, index) => {
@@ -134,8 +109,6 @@ function testAnimations() {
 
 // ===== NAVIGATION =====
 function initializeNavigation() {
-    console.log('🧭 Inicializando navegación...');
-    
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navbar = document.getElementById('navbar');
@@ -246,8 +219,6 @@ function setActiveNavLinkByPage() {
 
 // ===== SCROLL EFFECTS =====
 function initializeScrollEffects() {
-    console.log('📜 Inicializando efectos de scroll...');
-    
     // Back to top button
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
@@ -285,8 +256,6 @@ function initializeProductFilters() {
     const productCards = document.querySelectorAll('.product-card');
     
     if (filterBtns.length === 0) return;
-    
-    console.log('🔍 Inicializando filtros de productos...');
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -366,8 +335,6 @@ function handleViewMore(productCard) {
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
-    
-    console.log('📧 Inicializando formulario de contacto...');
     
     const formFields = contactForm.querySelectorAll('input, textarea, select');
     
@@ -466,7 +433,6 @@ function hideFieldError(field) {
 
 // ===== ANIMATIONS =====
 function initializeAnimations() {
-    console.log('✨ Inicializando animaciones...');
     initializeRevealAnimations();
     initializeCounters();
 }
@@ -566,8 +532,6 @@ function initializeParallax() {
     
     if (parallaxElements.length === 0) return;
     
-    console.log('🎭 Inicializando efectos parallax...');
-    
     window.addEventListener('scroll', throttle(function() {
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
@@ -580,8 +544,6 @@ function initializeParallax() {
 
 // ===== MICRO INTERACTIONS =====
 function initializeMicroInteractions() {
-    console.log('🎯 Inicializando micro-interacciones...');
-    
     // Button hover effects
     const buttons = document.querySelectorAll('.cta-button, .btn, button');
     buttons.forEach(button => {
@@ -794,7 +756,7 @@ function addGlobalEventListeners() {
     // Handle page visibility changes
     document.addEventListener('visibilitychange', function() {
         if (document.visibilityState === 'visible') {
-            console.log('👁️ Página visible nuevamente');
+            // Página visible nuevamente
         }
     });
     
@@ -851,8 +813,6 @@ function addGlobalEventListeners() {
 function initializeCoffeeBeans() {
     const container = document.getElementById('coffeeBeans');
     if (!container) return;
-    
-    console.log('☕ Inicializando animación de granos de café...');
     
     // Create floating coffee beans
     for (let i = 0; i < 15; i++) {
@@ -964,9 +924,6 @@ function initializeCoffeeRecommender() {
     // Check if CoffeeRecommender class is available
     if (typeof CoffeeRecommender !== 'undefined') {
         // CoffeeRecommender will initialize itself when its script loads
-        console.log('✅ Coffee Recommender available');
-    } else {
-        console.warn('⚠️ Coffee Recommender script not loaded');
     }
     
     // Also ensure the button works even if recommender isn't loaded
@@ -980,13 +937,11 @@ function initializeCoffeeRecommender() {
 
 // ===== ERROR HANDLING =====
 window.addEventListener('error', function(e) {
-    console.error('⚠️ Error detectado:', e.error);
+    console.error('Error:', e.error);
 });
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎯 DOM cargado, inicializando componentes...');
-    
     // Always initialize navigation immediately
     initializeNavigation();
     
@@ -1016,8 +971,6 @@ function initializeScrollArrow() {
     
     if (scrollArrow && contenidoSection) {
         scrollArrow.addEventListener('click', function() {
-            console.log('🔽 Flechita clickeada - navegando a contenido...');
-            
             // Smooth scroll hasta la sección de contenido
             contenidoSection.scrollIntoView({
                 behavior: 'smooth',
@@ -1030,8 +983,6 @@ function initializeScrollArrow() {
                 scrollArrow.style.transform = 'scale(1)';
             }, 150);
         });
-        
-        console.log('✅ Flechita de scroll inicializada');
     }
 }
 
@@ -1053,8 +1004,6 @@ function initializeCartaPromotion() {
                 }, 150);
             }
         });
-        
-        console.log('✅ Botón de recomendación rápida inicializado');
     }
     
     // Initialize showcase items hover effects
@@ -1066,8 +1015,6 @@ function initializeCartaPromotion() {
             window.location.href = `carta.html#${coffeeType}`;
         });
     });
-    
-    console.log('✅ Items de showcase inicializados');
 }
 
 // Agregar a la inicialización principal
@@ -1075,5 +1022,3 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollArrow();
     initializeCartaPromotion();
 });
-
-console.log('✅ Script principal cargado correctamente');
