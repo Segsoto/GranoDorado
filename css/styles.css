@@ -5613,3 +5613,14 @@ body.loading {
     margin-bottom: 0.25rem;
   }
 }
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center; /* Esto asegura que ambos botones estén alineados */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-buttons .cta-button {
+  margin: 0; /* Elimina cualquier margen que pueda estar causando el desalineamiento */
+}
