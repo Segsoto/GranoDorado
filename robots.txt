@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://granodorado.vercel.app/sitemap.xml
+
+# Disallow specific paths if needed
+Disallow: /css/
+Disallow: /js/
+Disallow: /videos/
+
+# Allow important pages
+Allow: /
+Allow: /carta.html
+Allow: /quienes-somos.html
+Allow: /historia.html
+Allow: /ubicacion.html
+Allow: /images/
+
+# Crawl delay (optional)
+Crawl-delay: 1
